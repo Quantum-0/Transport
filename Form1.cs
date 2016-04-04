@@ -48,10 +48,14 @@ namespace Прога2
 
                 if (isEmpty)
                     if (!(MessageBox.Show("Некоторые данные могут быть стёрты. Продолжить?", "", MessageBoxButtons.YesNo) == DialogResult.Yes))
+                    {
+                        numericUpDown1.Value = datagrid.RowCount;
+                        numericUpDown2.Value = datagrid.ColumnCount;
                         return;
+                    }
             }
 
-            datagrid.RowCount = (int) numericUpDown1.Value;
+            datagrid.RowCount = (int)numericUpDown1.Value;
             datagrid.ColumnCount = (int)numericUpDown2.Value;
         }
     }
