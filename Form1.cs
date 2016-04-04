@@ -35,17 +35,21 @@ namespace Прога2
 
         private void numericUpDown_ValueChanged(object sender, EventArgs e)
         {
-            bool isEmpty = false;
-            for (int i = 0; i < datagrid.RowCount; i++)
-                if (datagrid[datagrid.ColumnCount-1, i].Value.ToString() != "")
-                    isEmpty = true;
-            for (int i = 0; i < datagrid.ColumnCount; i++)
-                if (datagrid[i, datagrid.RowCount-1].Value.ToString() != "")
-                    isEmpty = true;
+            if (datagrid.RowCount > (int)numericUpDown1.Value || datagrid.ColumnCount > (int)numericUpDown2.Value)
+            {
+                bool isEmpty = false;
 
-            if (isEmpty)
-                if (!(MessageBox.Show("Некоторые данные могут быть стёрты. Продолжить?", "", MessageBoxButtons.YesNo) == DialogResult.Yes))
-                    return;
+                for (int i = 0; i < datagrid.RowCount; i++)
+                    if (datagrid[datagrid.ColumnCount - 1, i].Value != null)
+                        isEmpty = true;
+                for (int i = 0; i < datagrid.ColumnCount; i++)
+                    if (datagrid[i, datagrid.RowCount - 1].Value != null)
+                        isEmpty = true;
+
+                if (isEmpty)
+                    if (!(MessageBox.Show("Некоторые данные могут быть стёрты. Продолжить?", "", MessageBoxButtons.YesNo) == DialogResult.Yes))
+                        return;
+            }
 
             datagrid.RowCount = (int) numericUpDown1.Value;
             datagrid.ColumnCount = (int)numericUpDown2.Value;
