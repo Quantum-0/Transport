@@ -60,5 +60,28 @@ namespace Прога2
             datagrid.RowCount = (int)numericUpDown1.Value;
             datagrid.ColumnCount = (int)numericUpDown2.Value;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (radioButton1.Checked)
+                metodLebedeva();
+            if (radioButton2.Checked)
+                metodMin();
+        }
+
+        private void Optimization(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metodMin()
+        {
+
+        }
+
+        private void metodLebedeva()
+        {
+
+        }
     }
 }
