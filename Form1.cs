@@ -39,12 +39,14 @@ namespace Прога2
             {
                 bool isEmpty = false;
 
-                for (int i = 0; i < datagrid.RowCount; i++)
-                    if (datagrid[datagrid.ColumnCount - 1, i].Value != null)
-                        isEmpty = true;
-                for (int i = 0; i < datagrid.ColumnCount; i++)
-                    if (datagrid[i, datagrid.RowCount - 1].Value != null)
-                        isEmpty = true;
+                if (sender== numericUpDown1)
+                    for (int i = 0; i < datagrid.RowCount; i++)
+                        if (datagrid[datagrid.ColumnCount - 1, i].Value != null)
+                            isEmpty = true;
+                if (sender == numericUpDown2)
+                    for (int i = 0; i < datagrid.ColumnCount; i++)
+                        if (datagrid[i, datagrid.RowCount - 1].Value != null)
+                            isEmpty = true;
 
                 if (isEmpty)
                     if (!(MessageBox.Show("Некоторые данные могут быть стёрты. Продолжить?", "", MessageBoxButtons.YesNo) == DialogResult.Yes))
