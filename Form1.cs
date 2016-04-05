@@ -83,5 +83,16 @@ namespace Прога2
         {
 
         }
+
+        private void datagrid_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            int a;
+
+
+            if (!Int32.TryParse(datagrid[e.ColumnIndex, e.RowIndex].Value.ToString(), out a))
+            {
+                datagrid[e.RowIndex,e.ColumnIndex].Value = "";
+            }
+        }
     }
 }

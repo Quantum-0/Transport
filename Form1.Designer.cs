@@ -150,6 +150,7 @@
             this.datagrid.Name = "datagrid";
             this.datagrid.Size = new System.Drawing.Size(456, 183);
             this.datagrid.TabIndex = 7;
+            this.datagrid.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagrid_CellEndEdit);
             // 
             // button1
             // 
