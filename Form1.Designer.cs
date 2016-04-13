@@ -146,8 +146,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.datagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datagrid.ColumnHeadersVisible = false;
             this.datagrid.Location = new System.Drawing.Point(12, 82);
+            this.datagrid.MultiSelect = false;
             this.datagrid.Name = "datagrid";
+            this.datagrid.RowHeadersVisible = false;
             this.datagrid.Size = new System.Drawing.Size(456, 183);
             this.datagrid.TabIndex = 7;
             this.datagrid.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagrid_CellEndEdit);
@@ -166,6 +169,7 @@
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button2.Enabled = false;
             this.button2.Location = new System.Drawing.Point(125, 271);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(107, 23);

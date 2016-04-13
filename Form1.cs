@@ -59,6 +59,14 @@ namespace Прога2
 
             datagrid.RowCount = (int)numericUpDown1.Value;
             datagrid.ColumnCount = (int)numericUpDown2.Value;
+
+            datagrid[0,0].Value = "i/j";
+            datagrid.Rows[0].DefaultCellStyle.BackColor = Color.PeachPuff;
+            datagrid.Columns[0].DefaultCellStyle.BackColor = Color.PeachPuff;
+            datagrid[0,0].Style.BackColor = Color.DimGray;
+            datagrid[0,0].ReadOnly = true;
+            foreach (DataGridViewColumn i in datagrid.Columns)
+                i.Width = 50;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -67,6 +75,9 @@ namespace Прога2
                 metodLebedeva();
             if (radioButton2.Checked)
                 metodMin();
+
+            button2.Enabled = true;
+            button1.Text = "Изменить данные";
         }
 
         private void Optimization(object sender, EventArgs e)
