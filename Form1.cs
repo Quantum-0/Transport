@@ -12,6 +12,8 @@ namespace Прога2
 {
     public partial class Form1 : Form
     {
+        bool result = false;
+
         public Form1()
         {
             InitializeComponent();
@@ -71,18 +73,37 @@ namespace Прога2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (radioButton1.Checked)
-                metodLebedeva();
-            if (radioButton2.Checked)
-                metodMin();
+            if (result)
+            {
+                button2.Text = "Оптимизировать";
+                button1.Text = "Выполнить";
+                button2.Enabled = false;
+                datagrid.ReadOnly = false;
+                result = false;
 
-            button2.Enabled = true;
-            button1.Text = "Изменить данные";
+                numericUpDown1.Enabled = true;
+                numericUpDown2.Enabled = true;
+            }
+            else
+            {
+                result = true;
+                if (radioButton1.Checked)
+                    metodLebedeva();
+                if (radioButton2.Checked)
+                    metodMin();
+
+                button2.Enabled = true;
+                button1.Text = "Изменить данные";
+                datagrid.ReadOnly = true;
+                numericUpDown1.Enabled = false;
+                numericUpDown2.Enabled = false;
+            }
         }
 
         private void Optimization(object sender, EventArgs e)
         {
-
+            button2.Text = "Оптимизировано";
+            button2.Enabled = false;
         }
 
         private void metodMin()
