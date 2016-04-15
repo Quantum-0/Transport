@@ -27,8 +27,9 @@ namespace Прога2
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            datagrid.RowCount = 2;
-            datagrid.ColumnCount = 2;
+            /*datagrid.RowCount = 2;
+            datagrid.ColumnCount = 2;*/
+            numericUpDown_ValueChanged(null, new EventArgs());
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
@@ -53,14 +54,14 @@ namespace Прога2
                 if (isEmpty)
                     if (!(MessageBox.Show("Некоторые данные могут быть стёрты. Продолжить?", "", MessageBoxButtons.YesNo) == DialogResult.Yes))
                     {
-                        numericUpDown1.Value = datagrid.RowCount;
-                        numericUpDown2.Value = datagrid.ColumnCount;
+                        numericUpDown1.Value = datagrid.RowCount - 1;
+                        numericUpDown2.Value = datagrid.ColumnCount - 1;
                         return;
                     }
             }
 
-            datagrid.RowCount = (int)numericUpDown1.Value;
-            datagrid.ColumnCount = (int)numericUpDown2.Value;
+            datagrid.RowCount = (int)numericUpDown1.Value + 1;
+            datagrid.ColumnCount = (int)numericUpDown2.Value + 1;
 
             datagrid[0,0].Value = "i/j";
             datagrid.Rows[0].DefaultCellStyle.BackColor = Color.PeachPuff;
