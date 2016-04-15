@@ -127,5 +127,10 @@ namespace Прога2
                 datagrid[e.RowIndex,e.ColumnIndex].Value = "";
             }
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Где-то тут будут все 4 справки.");
+        }
     }
 }
