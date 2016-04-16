@@ -64,8 +64,8 @@ namespace Прога2
             datagrid.ColumnCount = (int)numericUpDown2.Value + 1;
 
             datagrid[0,0].Value = "i/j";
-            datagrid.Rows[0].DefaultCellStyle.BackColor = Color.PeachPuff;
-            datagrid.Columns[0].DefaultCellStyle.BackColor = Color.PeachPuff;
+            datagrid.Rows[0].DefaultCellStyle.BackColor = Color.LightGreen;
+            datagrid.Columns[0].DefaultCellStyle.BackColor = Color.LightGreen;
             datagrid[0,0].Style.BackColor = Color.DimGray;
             datagrid[0,0].ReadOnly = true;
             foreach (DataGridViewColumn i in datagrid.Columns)
@@ -121,6 +121,8 @@ namespace Прога2
         {
             int a;
 
+            if (e.ColumnIndex == 0 && e.RowIndex == 0)
+                return;
 
             if (!Int32.TryParse(datagrid[e.ColumnIndex, e.RowIndex].Value.ToString(), out a))
             {
